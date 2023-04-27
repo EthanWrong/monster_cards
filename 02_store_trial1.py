@@ -1,7 +1,7 @@
 """Component 02: Store cards in catalogue.
 Trial 1:
-Dict of name-attributes pairs,
- where attributes are stored in a dict of attribute-value pairs."""
+Dict of name-traits pairs,
+ where traits are stored in a dict of trait-value pairs."""
 
 card_cat = {
     "Stoneling": {
@@ -65,12 +65,3 @@ card_cat = {
         "Cunning": 2
     }
 }
-
-selected_card = "Stoneling"
-
-# example code READ NAME + ATTRS
-for attr in card_cat[selected_card]:
-    print(attr, card_cat[selected_card][attr])
-
-# example code WRITE NAME + ATTRS
-"""First, remove item from dict, then create new item with new key."""

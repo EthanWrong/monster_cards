@@ -1,7 +1,7 @@
 """Component 02: Store cards in catalogue.
 Trial 2:
-Dict of name-attributes pairs,
- where attributes are stored in a list of 4 numbers."""
+Dict of name-traits pairs,
+ where traits are stored in a list of 4 numbers."""
 
 card_cat = {
     "Stoneling": [7, 1, 25, 15],
