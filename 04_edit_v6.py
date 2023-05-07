@@ -15,6 +15,8 @@ confirmation prompt when cancelling.
 Renamed TITLE to title to meet PEP8 requirements.
 
 Fixed bug where canceling during rename would set name to None
+
+Removed redundant find_card() function, and fixed the one use-case
 """
 
 from easygui import *
@@ -35,16 +37,6 @@ card_cat = [  # card catalogue
     ["Froststep", [14, 14, 17, 4]],
     ["Wispghoul", [17, 19, 3, 2]],
 ]
-
-
-def find_card(name, cat=card_cat):
-    """From 02_store_v2.py"""
-    """Returns the card and index that matches the name;
-    thus duplicate names invalid"""
-    for index, card in enumerate(cat):
-        if card[0].lower() == name.lower():
-            return card, index
-    return None
 
 
 def get_new_name(msg, title, cat=card_cat):
@@ -93,7 +85,7 @@ def review_card(card, cat=card_cat):
 
         elif choice == "Save":  # save card
             if card in cat:  # card already in catalogue:
-                cat[find_card(card[0])[1]] = card_temp  # replaces card
+                cat[cat.index(card)] = card_temp  # replaces card
             else:
                 cat.append(card_temp)  # adds card to end
             return cat
@@ -139,5 +131,5 @@ def edit_card(card):
 
 # ["yyy", [2, 2, 2, 2]]
 # card_cat[0]
-card_cat = review_card(["yyy", [2, 2, 2, 2]], card_cat)
+card_cat = review_card(card_cat[0], card_cat)
 print(card_cat)
