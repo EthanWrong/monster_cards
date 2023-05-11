@@ -36,13 +36,14 @@ def format_card(card):
 def delete_card(card, cat=card_cat):
     title = "Delete Card"
     confirm = ynbox(format_card(card)+f"\nAre you sure you want to delete "
-                                      f"**{card[0]}**? They will be very sad",
+                                      f"**{card[0]}**?\n\nThey will be very "
+                                      f"sad :(",
                     title)
     if confirm:
         cat.remove(card)
         return cat
     else:
-        msgbox(f"You have just saved **{card[0]}**'s life", title)
+        msgbox(f"You have just saved **{card[0]}'s** life", title)
         return cat
 
 
