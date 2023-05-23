@@ -91,13 +91,14 @@ def welcome():
 def instructions():
     messages = [
         f"This program allows you to store and manage monster cards in the "
-        f"catalogue.\n\nYou may EDIT or DELETE cards, and can OUTPUT the "
+        f"catalogue.\n\nYou may EDIT or DELETE cards, can SEARCH for "
+        f"individual cards, and can OUTPUT the "
         f"full menu to the Python Console.",
         f"Cards are attached to a name, and then have {len(TK)} traits.\n\n"
         f"The traits each card can have are {', '.join(TK)}.\n\n"
         f"The traits have an integer value between {MIN_TRAIT} and "
         f"{MAX_TRAIT}",
-        f"That's it, really!"
+        f"The program should be pretty self-explanatory, so that's it, really!"
     ]
 
     print("#### INSTRUCTIONS ####")
