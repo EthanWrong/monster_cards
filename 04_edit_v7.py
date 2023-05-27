@@ -20,6 +20,8 @@ Removed redundant find_card() function, and fixed the one use-case
 
 Fixed bug where you couldn't rename the card to its original name, because
 it showed the error "card already in catalogue" with a patchwork fix
+
+Added capitalisation to renaming card
 """
 
 from easygui import *
@@ -46,7 +48,11 @@ def get_new_name(msg, title, orig_card, cat=card_cat):
     """Returns a str; the new name"""
     cards = [card[0] for card in cat]  # collect card names
 
-    new_name = enterbox(msg, title).capitalize()
+    new_name = enterbox(msg, title)
+
+    if not new_name:
+        return None
+    new_name = new_name.capitalize()
 
     if new_name not in cards or new_name == orig_card[0]:
         return new_name
@@ -133,7 +139,7 @@ def edit_card(card, orig_card):
         return edit_card(card, orig_card)
 
 
-# ["yyy", [2, 2, 2, 2]]
+# ["Newcard", [2, 2, 2, 2]]
 # card_cat[0]
 card_cat = review_card(card_cat[0], card_cat)
 print(card_cat)
