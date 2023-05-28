@@ -184,7 +184,7 @@ def edit_card(card, orig_card, cat):
 
     while True:
         choice = buttonbox(format_card(card), title,
-                           choices=("Rename", *TK, "Done"))
+                           choices=["Rename", *TK, "Done"])
 
         if choice == "Rename":  # edit name
             new_name = get_new_name(f"Rename {card[0]}", title, cat, orig_card)
